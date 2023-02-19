@@ -1,0 +1,10 @@
+
+a	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(‰Æáe8¶“¡¥æ0
+i
+java:S3008"LRename this field "B" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÎÉÄì8Ë“¡¥æ0
+i
+java:S3008"LRename this field "H" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(àäê€8Ì“¡¥æ0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(öÝÂ’8í“¡¥æ0
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Å÷Ø”úÿÿÿÿ8’”¡¥æ0
+@
+java:S1128"$Remove this unused import 'java.io'.(¬›ãD8””¡¥æ0
