@@ -7,8 +7,6 @@ J
 src/CurrencyFormatter.java,9\7\97d39235c03def6e22bdb85d4fbc9064845ed274
 B
 src/EndOfFile.java,2\0\2005e935e2bcce9c92bcc9b853a487e4da690e5d
-I
-src/InitializerBlock.java,4\1\4190868c9598ca0654645a9a61909e4bf7d88a14
 D
 src/IntToString.java,d\b\db922395c8791af340441a68e452170ac7b3240b
 D
@@ -19,3 +17,7 @@ D
 src/StringToken.java,a\1\a1b951c89a324428db986bfb4b87e0c1c01591c5
 D
 src/Pallindrome.java,c\8\c8f6d5eae0235ed0f5cc736432f78968091828c6
+G
+src/JavaBigDecimal.java,0\7\078798cb14c30e606f942c555d983b3bdff1e48c
+E
+src/Inheritance2.java,6\9\69af839527c99f21d6f1f5e92e8d9e851f0fc862

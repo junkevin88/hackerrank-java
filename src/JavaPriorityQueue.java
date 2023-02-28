@@ -5,8 +5,10 @@ import java.util.Scanner;
  * Create the Student and Priorities classes here.
  */
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
 
-class Student1 implements Comparable<Student1> {
+class Student1 {
     private int id;
     private String name;
     private double cgpa;
@@ -28,38 +30,35 @@ class Student1 implements Comparable<Student1> {
     public double getCgpa() {
         return cgpa;
     }
-
-    @Override
-    public int compareTo(Student1 o) {
-        if (this.cgpa == o.cgpa) {
-            if (this.name.equals(o.name)) {
-                return this.id - o.id;
-            } else {
-                return this.name.compareTo(o.name);
-            }
-        } else {
-            return (int) (o.cgpa - this.cgpa);
-        }
-    }
-
 }
 
 class Priorities {
     public List<Student1> getStudents(List<String> events) {
-        List<Student1> students = new ArrayList<>();
+        PriorityQueue<Student1> pq = new PriorityQueue<>(Comparator.comparing(Student1::getCgpa).reversed()
+                .thenComparing(Student1::getName)
+                .thenComparing(Student1::getId));
+        List<Student1> result = new ArrayList<>();
         for (String event : events) {
-            String[] tokens = event.split(" ");
-            if (tokens[0].equals("ENTER")) {
-                students.add(new Student1(Integer.parseInt(tokens[3]), tokens[1], Double.parseDouble(tokens[2])));
-            } else {
-                students.sort(null);
-                students.remove(0);
+            String[] parts = event.split(" ");
+            if (parts[0].equals("ENTER")) {
+                String name = parts[1];
+                double cgpa = Double.parseDouble(parts[2]);
+                int id = Integer.parseInt(parts[3]);
+                Student1 student = new Student1(id, name, cgpa);
+                pq.offer(student);
+            } else if (parts[0].equals("SERVED")) {
+                pq.poll();
             }
         }
-        students.sort(null);
-        return students;
+
+        while (!pq.isEmpty()) {
+            result.add(pq.poll());
+        }
+
+        return result;
     }
 }
+
 
 
 public class JavaPriorityQueue {
